@@ -8,7 +8,7 @@ const Register = () => {
 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      const response = await fetch("http://localhost:5000/api/users/register", {
+      const response = await fetch("https://admindashdoard-node-1.onrender.com/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
