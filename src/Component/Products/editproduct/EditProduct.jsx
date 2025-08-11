@@ -17,7 +17,7 @@ const EditProduct = () => {
     const fetchProductData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/products/${id}`
+          `https://admindashdoard-node-1.onrender.com/api/products/${id}`
         );
         setProductData(response.data);
       } catch (error) {
@@ -30,7 +30,7 @@ const EditProduct = () => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/categories"
+          "https://admindashdoard-node-1.onrender.com/api/categories"
         );
         setCategories(response.data);
       } catch (error) {
@@ -41,7 +41,7 @@ const EditProduct = () => {
     const fetchSubcategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/subcategories"
+          "https://admindashdoard-node-1.onrender.com/api/subcategories"
         );
         setSubcategories(response.data);
       } catch (error) {
@@ -57,7 +57,7 @@ const EditProduct = () => {
   const handleUpdateProduct = async (formData) => {
     setLoading(true);
     try {
-      await axios.put(`http://localhost:5000/api/products/${id}`, formData);
+      await axios.put(`https://admindashdoard-node-1.onrender.com/api/products/${id}`, formData);
       navigate("/app/products");
     } catch (error) {
       toast.error("Error updating product. Please try again.");

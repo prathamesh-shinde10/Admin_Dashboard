@@ -16,7 +16,7 @@ const EditCategory = () => {
   useEffect(() => {
     const fetchCategory = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/categories/${id}`);
+        const response = await axios.get(`https://admindashdoard-node-1.onrender.com/api/categories/${id}`);
         setInitialData(response.data);
       } catch (error) {
         toast.error("Error fetching category details.");
@@ -27,7 +27,7 @@ const EditCategory = () => {
 
     const fetchExistingCategories = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/categories`);
+        const response = await axios.get(`https://admindashdoard-node-1.onrender.com/api/categories`);
         setExistingCategories(response.data); 
       } catch (error) {
         toast.error("Error fetching existing categories.");
@@ -41,7 +41,7 @@ const EditCategory = () => {
   const handleSubmit = async (formData) => {
     setLoading(true); 
     try {
-      await axios.put(`http://localhost:5000/api/categories/${id}`, formData);
+      await axios.put(`https://admindashdoard-node-1.onrender.com/api/categories/${id}`, formData);
       navigate("/app/category");
     } catch (error) {
       toast.error("Error updating category. Please try again.");

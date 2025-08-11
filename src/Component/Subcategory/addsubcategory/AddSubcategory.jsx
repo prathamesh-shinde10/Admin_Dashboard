@@ -17,8 +17,8 @@ const AddSubcategory = () => {
       setLoading(true);
       try {
         const [categoriesResponse, subcategoriesResponse] = await Promise.all([
-          axios.get("http://localhost:5000/api/categories"),
-          axios.get("http://localhost:5000/api/subcategories"),
+          axios.get("https://admindashdoard-node-1.onrender.com/api/categories"),
+          axios.get("https://admindashdoard-node-1.onrender.com/api/subcategories"),
         ]);
 
         setCategories(categoriesResponse.data);
@@ -48,7 +48,7 @@ const AddSubcategory = () => {
 
     setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/subcategories", formData);
+      await axios.post("https://admindashdoard-node-1.onrender.com/api/subcategories", formData);
       navigate("/app/subcategory");
     } catch (error) {
       toast.error("Error adding subcategory. Please try again.");

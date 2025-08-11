@@ -13,7 +13,7 @@ const FormSubmitHandler = ({
 }) => {
   const checkSubcategoryExists = async (name) => {
     try {
-      const response = await axios.get("http://localhost:5000/api/subcategories");
+      const response = await axios.get("https://admindashdoard-node-1.onrender.com/api/subcategories");
       const subcategoryNames = response.data
         .filter(subcat => subcat._id !== initialData._id) 
         .map(subcat => subcat.subcatname.toLowerCase());

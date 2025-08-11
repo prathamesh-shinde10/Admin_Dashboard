@@ -15,7 +15,7 @@ const AddCategory = () => {
     const fetchExistingCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/categories"
+          "https://admindashdoard-node-1.onrender.com/api/categories"
         );
         setExistingCategories(response.data);
       } catch (error) {
@@ -40,7 +40,7 @@ const AddCategory = () => {
 
     setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/categories", formData);
+      await axios.post("https://admindashdoard-node-1.onrender.com/api/categories", formData);
       navigate("/app/category");
     } catch (error) {
       toast.error("Error adding category. Please try again.");

@@ -21,7 +21,7 @@ const AddProduct = () => {
       try {
         const response = await axios.get(
           //"https://digitalflake-project.onrender.com/api/categories"
-          "http://localhost:5000/api/categories"
+          "https://admindashdoard-node-1.onrender.com/api/categories"
         );
         setCategories(response.data);
       } catch (error) {
@@ -35,7 +35,7 @@ const AddProduct = () => {
     const fetchSubcategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/subcategories"
+          "https://admindashdoard-node-1.onrender.com/api/subcategories"
         );
         setSubcategories(response.data);
       } catch (error) {
@@ -56,7 +56,7 @@ const AddProduct = () => {
   const handleSubmit = async (formData) => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/api/products");
+      const response = await axios.get("https://admindashdoard-node-1.onrender.com/api/products");
       const productNames = response.data.map((product) =>
         product.productName.toLowerCase()
       );
@@ -67,7 +67,7 @@ const AddProduct = () => {
         return;
       }
 
-      await axios.post("http://localhost:5000/api/products", formData, {
+      await axios.post("https://admindashdoard-node-1.onrender.com/api/products", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       navigate("/app/products");
